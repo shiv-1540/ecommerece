@@ -1,0 +1,6 @@
+cors
+dotenv
+express
+mongoose
+multer
+jsonwebtoken
