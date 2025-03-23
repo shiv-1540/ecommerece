@@ -2,9 +2,7 @@ const mongoose = require('mongoose');
 
 const rentProductSchema = new mongoose.Schema({
     farmer_id: { 
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'User',   // Reference to Farmer
-        required: true 
+        type: String, required: true
     },             
     // Store farmer ID as a string
     
