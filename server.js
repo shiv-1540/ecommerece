@@ -4,10 +4,14 @@ const path = require("path");
 const cors = require("cors");
 const multer = require('multer');
 const YieldSell = require("./models/yieldsell.js")
+const User = require("./models/users.js")
+const RentProduct=require("./models/rent.js")
+const db = require("./db.js")
+
 require('dotenv').config({ path: './config/.env' });
 require("dotenv").config();
-const db = require("./db.js")
-const RentProduct=require("./models/rent.js")
+
+
 
 const app = express();
 const PORT = 5000;
