@@ -1,57 +1,53 @@
 const express = require("express");
-const app = require("./app");
-const db = require("./db");
-const multer = require('multer');
-const path = require('path');
-const mongoose = require('mongoose');
+const fs = require("fs");
+const path = require("path");
 const cors = require("cors");
-// const Farmer = require("./models/Farmer");
-const User = require("./models/users.js");
-// const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const Shops = require("./models/shops.js");
-const Product = require("./models/product.js");
-const shops = require("./models/shops.js");
-const YieldSell=require("./models/yieldsell.js")
+const multer = require('multer');
+const YieldSell = require("./models/yieldsell.js")
 require('dotenv').config({ path: './config/.env' });
-
-// Load .env file
 require("dotenv").config();
+const db = require("./db.js")
+const RentProduct=require("./models/rent.js")
 
-const PORT = process.env.PORT || 5144;
+const app = express();
+const PORT = 5000;
 
-app.use(cors());    
 app.use(express.json());
 app.use('/uploads', express.static('uploads')); // Serve static files
 // Multer setup for file uploads
 const storage = multer.diskStorage({
     destination: (req, file, cb) => cb(null, 'uploads/'),
     filename: (req, file, cb) => cb(null, Date.now() + '-' + file.originalname)
-  });
-  
-  const upload = multer({ storage: storage });
+});
 
-  
+const upload = multer({ storage: storage });
+
+app.use(cors());
+
+db.on('connected', () => {
+    console.log('successfully connected to mongodb server');
+});
+
 // Farmer Signup (No Authentication)
 app.post('/api/farmer/signup', async (req, res) => {
     console.log("Farmer signup route hit with data:", req.body);
 
-    const { 
-        first_name, 
-        last_name, 
-        contact_no, 
-        email, 
-        password, 
-        confirmPassword, 
-        street, 
-        state, 
-        city 
+    const {
+        first_name,
+        last_name,
+        contact_no,
+        email,
+        password,
+        confirmPassword,
+        street,
+        state,
+        city
     } = req.body;
 
     // 🔥 Field Validation
     if (
-        !first_name || !last_name || !contact_no || 
-        !email || !password || !confirmPassword 
+        !first_name || !last_name || !contact_no ||
+        !email || !password || !confirmPassword
         || !state || !city || !street
     ) {
         return res.status(400).json({ message: 'All fields are required' });
@@ -72,7 +68,7 @@ app.post('/api/farmer/signup', async (req, res) => {
 
         // 🔥 Create a new Farmer
         const newFarmer = new User({
-            user_id:"user102",
+            user_id: "user102",
             first_name,
             last_name,
             contact_no,
@@ -149,144 +145,17 @@ app.post('/api/farmer/login', async (req, res) => {
     }
 });
 
+// Function to load JSON data safely
+const loadJSONData = (filePath) => {
+    try {
+        const data = fs.readFileSync(filePath, "utf-8");
+        return JSON.parse(data);
+    } catch (error) {
+        console.error(Error reading JSON file: ${filePath}, error);
+        return [];
+    }
+};
 
-
-
-// app.post('/api/admin/viewshops', async (req, res) => {
-    
-
-//     const { email, password } = req.body;
-
-//     // 🔥 Field Validation
-//     if (!email || !password) {
-//         return res.status(400).json({ message: 'Email and password are required' });
-//     }
-
-//     try {
-//         // 🔥 Check if the farmer exists
-//         const farmer = await User.findOne({ email, role: 'Farmer' });
-
-//         if (!farmer) {
-//             return res.status(404).json({ message: 'Farmer not found' });
-//         }
-
-//         // 🔥 Verify Password (Plain text comparison)
-//         if (farmer.password !== password) {
-//             return res.status(401).json({ message: 'Invalid credentials' });
-//         }
-
-//         // 🔥 Successful Login
-//         res.status(200).json({
-//             message: 'Login successful',
-//             farmer: {
-//                 user_id: farmer._id,
-//                 first_name: farmer.first_name,
-//                 last_name: farmer.last_name,
-//                 email: farmer.email,
-//                 role: farmer.role,
-//                 location: farmer.location
-//             }
-//         });
-
-//     } catch (error) {
-//         console.error('Error during farmer login:', error);
-//         res.status(500).json({ message: 'Internal server error', error: error.message });
-//     }
-// });
-
-// // Get all shops
-// app.get('/api/farmer/shops', async (req, res) => {
-//     try {
-//         try {
-//             const shops = await Shops.find({}, { _id: 1, shop_name: 1, image: 1 });
-//             res.status(200).json({ shops });
-//           } catch (error) {
-//             console.error("Error fetching shops from MongoDB:", error);
-//             throw error;
-//           }
-
-//     } catch (error) {
-//         console.error('Error fetching shops:', error.message);
-//         res.status(500).json({ error: 'Internal Server Error' });
-//     }
-// });
-
-// // Add a Product
-// app.post('/api/addproduct', upload.single('image'), async (req, res) => {
-//     const { name, price, quantity, category, priceUnit, quantityUnit, user_id, sellingQuantity } = req.body;
-    
-//     const file_name = req.file.filename;
-//     const file_URL = path.join('/uploads/', file_name);
-  
-//     try {
-//       const shop = await Shops.findOne({ user_id: user_id });
-  
-//       if (!shop) {
-//         return res.status(404).json({ message: "Shop not found for the given user_id" });
-//       }
-  
-//       const newProduct = new Product({
-//         shop_id: shop._id,
-//         name,
-//         price,
-//         quantity,
-//         category,
-//         price_unit: priceUnit,
-//         quantity_unit: quantityUnit,
-//         image: file_URL,
-//         selling_quantities: sellingQuantity
-//       });
-  
-//       await newProduct.save();
-  
-//       res.status(201).json({ message: "Product added successfully" });
-//     } catch (err) {
-//       res.status(400).json({ message: err.message });
-//     }
-//   });
-  
-//   // Get all Products for a Shop by userID
-//   app.get('/api/products/:userID', async (req, res) => {
-//     const user_id = req.params.userID;
-  
-//     try {
-//       const shop = await Shops.findOne({ user_id: user_id });
-  
-//       if (!shop) {
-//         return res.status(404).json({ message: "Shop not found for the given user_id" });
-//       }
-  
-//       const products = await Product.find({ shop_id: shop._id });
-  
-//       res.status(200).json({ products: products });
-//     } catch (err) {
-//       res.status(400).json({ message: err.message });
-//     }
-//   });
-
-// // Get all products
-// app.get('/api/allproducts', async (req, res) => {
-//     try {
-//         const products = await Product.find();  // Fetch all products
-
-//         if (!products || products.length === 0) {
-//             return res.status(404).json({ message: "No products found" });
-//         }
-
-//         res.status(200).json({ 
-//             message: "Products retrieved successfully",
-//             products: products 
-//         });
-
-//     } catch (error) {
-//         console.error('Error fetching products:', error);
-//         res.status(500).json({ message: "Internal server error", error: error.message });
-//     }
-// });
-
-
-
-// Add Rent Product
 app.post('/api/rentproducts/add', async (req, res) => {
     console.log("Add Rent Product route hit with data:", req.body);
 
@@ -339,24 +208,18 @@ app.post('/api/rentproducts/add', async (req, res) => {
         res.status(500).json({ message: 'Internal server error', error: error.message });
     }
 });
-
-
 // Get all Rent Products (with location filter)
-// Get all Rent Products (with optional location filter)
-app.get('/api/farmer/searchEqp', async (req, res) => {
-    const { state, city } = req.query;   // Extract filters from query parameters
+app.get('/api/farmer/SerachEqp', async (req, res) => {
+    const { state, city } = req.query;   // Filtering based on location
 
     try {
-        // 🌟 Building dynamic query object
-        const query = {};
+        let query = {};
 
-        if (state) query.state = state;
-        if (city) query.city = city;
+        if (state) query['location.state'] = state;
+        if (city) query['location.city'] = city;
 
-        // Fetch products based on filters
         const products = await RentProduct.find(query);
-
-        // Check if any products found
+        
         if (products.length === 0) {
             return res.status(404).json({ message: "No rent products found for the specified location" });
         }
@@ -408,11 +271,10 @@ app.delete('/api/farmer/deleteEqp/:id', async (req, res) => {
 //================================================================================
 
 // Add Yield Sell
-a// Add Yield Sell
 app.post('/api/farmer/yieldadd', async (req, res) => {
-    const { farmer_id, crop_name, description, price_per_kg, quantity, state, city, street, images } = req.body;
+    const { farmer_id, crop_name, description, price_per_kg, quantity, location, images } = req.body;
 
-    if (!farmer_id || !crop_name || !price_per_kg || !quantity || !state || !city || !street) {
+    if (!farmer_id || !crop_name || !price_per_kg || !quantity || !location) {
         return res.status(400).json({ message: 'All fields are required' });
     }
 
@@ -423,9 +285,7 @@ app.post('/api/farmer/yieldadd', async (req, res) => {
             description,
             price_per_kg,
             quantity,
-            state,
-            city,
-            street,
+            location,
             images
         });
 
@@ -440,14 +300,13 @@ app.post('/api/farmer/yieldadd', async (req, res) => {
 
 // Get all Yield Sell Products (with location filter)
 app.get('/api/farmer/getallyield', async (req, res) => {
-    const { state, city, street } = req.query;
+    const { state, city } = req.query;
 
     try {
         let query = {};
 
-        if (state) query['state'] = state;
-        if (city) query['city'] = city;
-        if (street) query['street'] = street;
+        if (state) query['location.state'] = state;
+        if (city) query['location.city'] = city;
 
         const yields = await YieldSell.find(query);
 
@@ -464,33 +323,9 @@ app.get('/api/farmer/getallyield', async (req, res) => {
 });
 
 
-// Update Yield Sell
-app.put('/api/farmer/updateyield/:id', async (req, res) => {
-    try {
-        const updatedYield = await YieldSell.findByIdAndUpdate(
-            req.params.id,
-            { $set: req.body },
-            { new: true }
-        );
-
-        if (!updatedYield) {
-            return res.status(404).json({ message: 'Yield not found' });
-        }
-
-        res.status(200).json({ message: 'Yield updated successfully', yield: updatedYield });
-
-    } catch (error) {
-        res.status(500).json({ message: 'Internal server error', error: error.message });
-    }
-});
 
 
- const server = app.listen(PORT, () => {
-     console.log(`Server is running on port ${PORT}`);
- });
-
-process.on('uncaughtException', (err) => {
-    console.log(err.name, err.message);
-    console.log('Shutting down...');
-    process.exit(1);
+// Start server
+app.listen(PORT, () => {
+    console.log(✅ Server running on http://localhost:${PORT});
 });
