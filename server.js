@@ -18,7 +18,7 @@ require('dotenv').config({ path: './config/.env' });
 // Load .env file
 require("dotenv").config();
 
-const PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 5144;
 
 app.use(cors());    
 app.use(express.json());
