@@ -1,0 +1,247 @@
+[
+  {
+    "Bank Name": "State Bank of India",
+    "Loan Name": "SBI Kisan Credit Card",
+    "Description": "Provides short-term credit for crop production and other agricultural needs.",
+    "Interest Rate": "Starts at 7% per annum",
+    "Apply Link": "https://sbi.co.in/web/agri-rural/agriculture-banking/crop-loan/kisan-credit-card"
+  },
+  {
+    "Bank Name": "Punjab National Bank",
+    "Loan Name": "PNB Krishi Loan",
+    "Description": "Financial assistance for agricultural and allied activities.",
+    "Interest Rate": "7-10%",
+    "Apply Link": "https://www.pnbindia.in/agriculture-credit-schemes.html"
+  },
+  {
+    "Bank Name": "HDFC Bank",
+    "Loan Name": "HDFC Agri Loan",
+    "Description": "Supports farmers in purchasing equipment, seeds, and other needs.",
+    "Interest Rate": "8-12%",
+    "Apply Link": "https://www.hdfcbank.com/sme/borrow/popular-loans/agri-business-credit"
+  },
+  {
+    "Bank Name": "ICICI Bank",
+    "Loan Name": "ICICI Kisan Loan",
+    "Description": "Loans for crop cultivation and allied agricultural activities.",
+    "Interest Rate": "9-13%",
+    "Apply Link": "https://www.icicibank.com/rural/loans/farmer-finance"
+  },
+  {
+    "Bank Name": "NABARD",
+    "Loan Name": "NABARD Refinance Scheme",
+    "Description": "Provides refinancing to rural financial institutions for agricultural credit.",
+    "Interest Rate": "Depends on institution",
+    "Apply Link": "https://www.nabard.org/content1.aspx?id=1730&catid=23&mid=23"
+  },
+  {
+    "Bank Name": "Axis Bank",
+    "Loan Name": "Axis Bank Agri Loan",
+    "Description": "Loans for farm mechanization, irrigation, and other agricultural needs.",
+    "Interest Rate": "9-12%",
+    "Apply Link": "https://www.axisbank.com/agri-and-rural/loans"
+  },
+  {
+    "Bank Name": "Bank of Baroda",
+    "Loan Name": "Baroda Kisan Credit Card",
+    "Description": "Credit for crop production and post-harvest expenses.",
+    "Interest Rate": "Starts at 7% per annum",
+    "Apply Link": "https://www.bankofbaroda.in/farmers"
+  },
+  {
+    "Bank Name": "Canara Bank",
+    "Loan Name": "Canara Kisan OD Scheme",
+    "Description": "Overdraft facilities for agricultural expenses.",
+    "Interest Rate": "8-10%",
+    "Apply Link": "https://canarabank.com/pages/canara-kisan-od"
+  },
+  {
+    "Bank Name": "Andhra Bank",
+    "Loan Name": "Andhra Bank Agri Loan",
+    "Description": "Loans for agricultural infrastructure and allied activities.",
+    "Interest Rate": "8-11%",
+    "Apply Link": "https://www.unionbankofindia.co.in/en/SubCatList/agriculture-loan"
+  },
+  {
+    "Bank Name": "Bank of Maharashtra",
+    "Loan Name": "Maha Kisan Loan",
+    "Description": "Financial support for crop cultivation and equipment purchase.",
+    "Interest Rate": "7-10%",
+    "Apply Link": "https://bankofmaharashtra.in/kisan-all-purpose-term-loan"
+  },
+  {
+    "Bank Name": "Indian Overseas Bank",
+    "Loan Name": "IOB Agri Loan",
+    "Description": "Financial support for crop cultivation and allied agricultural activities.",
+    "Interest Rate": "8-11%",
+    "Apply Link": "https://www.iob.in/IOB-Krishi-Saral"
+  },
+  {
+    "Bank Name": "Union Bank of India",
+    "Loan Name": "Union Kisan Loan",
+    "Description": "Loans for farm mechanization, irrigation, and other agricultural needs.",
+    "Interest Rate": "9-12%",
+    "Apply Link": "https://www.unionbankofindia.co.in/en/Details/union-krishi-kamdhenu-gold-loan-scheme-for-agriculture-loan"
+  },
+  {
+    "Bank Name": "Allahabad Bank",
+    "Loan Name": "Allahabad Kisan Credit Card",
+    "Description": "Credit for crop production and post-harvest expenses.",
+    "Interest Rate": "Starts at 7% per annum",
+    "Apply Link": "https://www.indianbank.in/departments/rupay-kisan-card/"
+  },
+  {
+    "Bank Name": "UCO Bank",
+    "Loan Name": "UCO Kisan Loan",
+    "Description": "Loans for agricultural infrastructure and allied activities.",
+    "Interest Rate": "8-11%",
+    "Apply Link": "https://www.ucobank.com/agriculture-credit"
+  },
+  {
+    "Bank Name": "Vijaya Bank",
+    "Loan Name": "Vijaya Agri Loan",
+    "Description": "Financial support for crop cultivation and equipment purchase.",
+    "Interest Rate": "7-10%",
+    "Apply Link": "https://agritech.tnau.ac.in/banking/crbank_nasb_15vijaya_bank_1.html"
+  },
+  {
+    "Bank Name": "United Bank of India",
+    "Loan Name": "United Kisan Loan",
+    "Description": "Loans for crop cultivation and allied agricultural activities.",
+    "Interest Rate": "9-13%",
+    "Apply Link": "https://www.pnbindia.in/agriculture-credit-schemes.html"
+  },
+  {
+    "Bank Name": "Cooperative Banks",
+    "Loan Name": "Various Agri Loans",
+    "Description": "Provides loans for farm mechanization, irrigation, and other agricultural needs.",
+    "Interest Rate": "Varies",
+    "Apply Link": "Contact Local Cooperative Bank"
+  },
+  {
+    "Bank Name": "IDBI Bank",
+    "Loan Name": "IDBI Agri Business Loan",
+    "Description": "Provides support for agribusiness projects and farm activities.",
+    "Interest Rate": "9-13%",
+    "Apply Link": "https://www.idbibank.in/kisan-all-purpose-term-loan.aspx"
+  },
+  {
+    "Bank Name": "Karnataka Bank",
+    "Loan Name": "Karnataka Kisan Loan",
+    "Description": "Loans for crop cultivation and allied agricultural activities.",
+    "Interest Rate": "8-12%",
+    "Apply Link": "https://karnatakabank.com"
+  },
+  {
+    "Bank Name": "Kotak Mahindra Bank",
+    "Loan Name": "Kotak Agri Business Loan",
+    "Description": "Supports agriculture and agri-business activities with financial assistance.",
+    "Interest Rate": "10-14%",
+    "Apply Link": "https://www.kotak.com"
+  },
+  {
+    "Bank Name": "Dena Bank",
+    "Loan Name": "Dena Kisan Credit Card",
+    "Description": "Financial support for crop production and allied agricultural activities.",
+    "Interest Rate": "7-11%",
+    "Apply Link": "https://www.bankofbaroda.in"
+  },
+  {
+    "Bank Name": "Syndicate Bank",
+    "Loan Name": "Syndicate Kisan Credit Card",
+    "Description": "Short-term credit for agricultural and allied activities.",
+    "Interest Rate": "8-11%",
+    "Apply Link": "https://www.canarabank.in"
+  },
+  {
+    "Bank Name": "Corporation Bank",
+    "Loan Name": "Corp Kisan Loan",
+    "Description": "Provides financial assistance for crop cultivation and post-harvest needs.",
+    "Interest Rate": "8-12%",
+    "Apply Link": "https://www.unionbankofindia.co.in"
+  },
+  {
+    "Bank Name": "Federal Bank",
+    "Loan Name": "Federal Agri Loans",
+    "Description": "Offers loans for crop cultivation and farm infrastructure projects.",
+    "Interest Rate": "9-13%",
+    "Apply Link": "https://www.federalbank.co.in"
+  },
+  {
+    "Bank Name": "Jammu & Kashmir Bank",
+    "Loan Name": "J&K Kisan Loan",
+    "Description": "Financial support for farmers for crop production and equipment purchase.",
+    "Interest Rate": "9-14%",
+    "Apply Link": "https://www.jkbank.com"
+  },
+  {
+    "Bank Name": "South Indian Bank",
+    "Loan Name": "SIB Agri Loan",
+    "Description": "Offers loans for crop cultivation, irrigation, and other agricultural needs.",
+    "Interest Rate": "9-13%",
+    "Apply Link": "https://www.southindianbank.com"
+  },
+  {
+    "Bank Name": "Tamilnad Mercantile Bank",
+    "Loan Name": "TMB Kisan Loan",
+    "Description": "Financial assistance for agricultural projects and allied activities.",
+    "Interest Rate": "8-12%",
+    "Apply Link": "https://www.tmb.in"
+  },
+  {
+    "Bank Name": "Karur Vysya Bank",
+    "Loan Name": "KVB Agri Loans",
+    "Description": "Loans for farm equipment purchase, irrigation, and crop production needs.",
+    "Interest Rate": "8-11%",
+    "Apply Link": "https://www.kvb.co.in"
+  },
+  {
+    "Bank Name": "DCB Bank",
+    "Loan Name": "DCB Agri Business Loan",
+    "Description": "Offers support for farm and agribusiness-related activities.",
+    "Interest Rate": "9-14%",
+    "Apply Link": "https://www.dcbbank.com"
+  },
+  {
+    "Bank Name": "YES Bank",
+    "Loan Name": "YES Kisan Loan",
+    "Description": "Provides loans for agricultural and allied sectors including farm mechanization.",
+    "Interest Rate": "10-14%",
+    "Apply Link": "https://www.yesbank.in"
+  },
+  {
+    "Bank Name": "RBL Bank",
+    "Loan Name": "RBL Agri Loan",
+    "Description": "Support for crop cultivation and agri-business activities.",
+    "Interest Rate": "10-14%",
+    "Apply Link": "https://www.rblbank.com"
+  },
+  {
+    "Bank Name": "IndusInd Bank",
+    "Loan Name": "IndusInd Kisan Loan",
+    "Description": "Financial aid for agricultural development and allied projects.",
+    "Interest Rate": "9-13%",
+    "Apply Link": "https://www.indusind.com"
+  },
+  {
+    "Bank Name": "HSBC India",
+    "Loan Name": "HSBC Agri Loans",
+    "Description": "Tailored financial solutions for agri-business projects.",
+    "Interest Rate": "Customizable rates",
+    "Apply Link": "https://www.hsbc.co.in"
+  },
+  {
+    "Bank Name": "CitiBank",
+    "Loan Name": "Citi Agri Business Loan",
+    "Description": "Provides support for farmers involved in agri-business and large-scale projects.",
+    "Interest Rate": "Customizable rates",
+    "Apply Link": "https://www.online.citibank.co.in"
+  },
+  {
+    "Bank Name": "Bandhan Bank",
+    "Loan Name": "Bandhan Agri Loans",
+    "Description": "Financial aid for small and marginal farmers.",
+    "Interest Rate": "9-12%",
+    "Apply Link": "https://bandhanbank.com"
+  }
+]
